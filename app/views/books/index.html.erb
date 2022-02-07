@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="ms-2">Total No. Of Books <%= @books.count%></h1>
+
+<table class="table table-hover table-bordered container">
+ <thead class="table-dark">
+<tr>
+<th>Book Id</th>
+<th>Book Name</th>
+<th>Author Name</th>
+<th>Book Price </th>
+</tr>
+</thead>
+<% @books.each do |book|%>
+<tbody>
+<tr>
+<th><%= book.id%></th>
+<th><%= book.book_name%></th>
+<th><%= book.author_name%></th>
+<th><%= book.book_price%></th>
+<th><%= link_to "Edit", edit_book_path(book),class: "btn btn-primary " %></th>
+<th><%= button_to "Delete", book, method: :delete,class: "btn btn-danger " %></th>
+</tr>
+</tbody>
+<%end%>
+</table>
+
+
+
+
